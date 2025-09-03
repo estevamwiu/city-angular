@@ -1,0 +1,49 @@
+<div class = "container">
+
+    <div class="display-4 text-center" class = "font">Cadastro de Cidades</div>
+    <form [formGroup]="formGroupCity">
+
+  <div class="mb-3">
+    <label for="InputName" class="form-label" class = "font2">Nome da cidade</label>
+    <input formControlName="name" type="text" class="form-control" id="InputName">
+  </div>
+
+  <div class="mb-3">
+    <label for="InputEstate" class="form-label" class = "font2">Estado</label>
+    <input formControlName="state" type="text" class="form-control" id="InputEstate">
+  </div>
+
+   <div class="mb-3">
+    <label for="InputPopulation" class="form-label" class = "font2">População</label>
+    <input formControlName="population" type="text" class="form-control" id="InputPopulation">
+  </div>
+
+<div class="mb-3">
+    <label for="InputGentle" class="form-label" class = "font2">Gentílico</label>
+    <input formControlName="gentle" type="text" class="form-control" id="InputGentle">
+  </div>
+
+  <div class="mb-3">
+    <label for="InputDescription" class="form-label" class = "font2">Descrição</label>
+    <input formControlName="description" type="text" class="form-control" id="InputDescription">
+  </div>
+
+  <button type="submit" class="btn btn-primary" (click)="save()">Salvar</button>
+</form>
+
+<br><div class="font2">Cidades Cadastradas:</div><br>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let c of cities">
+      <div class="card mt-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ c.name }} - {{ c.state }}</h5>
+          <p class="card-text">
+            <strong>População:</strong> {{ c.population }} <br>
+            <strong>Gentílico:</strong> {{ c.gentle }} <br>
+            <strong>Descrição:</strong> {{ c.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
